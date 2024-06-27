@@ -1,5 +1,6 @@
 import { Author, Category, Book, Customer, Order } from './schema';
 
+// Заповнюємо базу даних авторами
 export async function seedAuthors() {
   const authors = [
     {
@@ -40,6 +41,7 @@ export async function seedAuthors() {
   }
 }
 
+// Заповнюємо базу даних категоріями
 export async function seedCategories() {
   const categories = [
     {
@@ -68,6 +70,7 @@ export async function seedCategories() {
   }
 }
 
+// Заповнюємо базу даних книгами
 export async function seedBooks() {
   const authorDickens = await Author.findOne({ name: 'Charles Dickens' });
   const categoryFiction = await Category.findOne({ name: 'Literary Fiction' });
@@ -95,6 +98,7 @@ export async function seedBooks() {
   }
 }
 
+// Заповнюємо базу даних покупцями
 export async function seedCustomers() {
   const customers = [
     {
@@ -119,6 +123,7 @@ export async function seedCustomers() {
   }
 }
 
+// Заповнюємо базу даних замовленнями
 export async function seedOrders() {
   const customerAlice = await Customer.findOne({ name: 'Alice Johnson' });
   const bookGreatExpectations = await Book.findOne({ title: 'Great Expectations' });
